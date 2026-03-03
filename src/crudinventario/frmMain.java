@@ -16,9 +16,10 @@ public class frmMain extends javax.swing.JFrame {
      * Creates new form frmMain
      */
     public frmMain() {
+        this.fArticulo = new frmArticulo;
         initComponents();
     }
-    frmArticulo fArticulo = new frmArticulo;
+    frmArticulo fArticulo;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,6 +42,7 @@ public class frmMain extends javax.swing.JFrame {
         btnInventarios.addActionListener(this::btnInventariosActionPerformed);
 
         btnClientes.setText("Clientes");
+        btnClientes.addActionListener(this::btnClientesActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,6 +80,10 @@ public class frmMain extends javax.swing.JFrame {
         fArticulo.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInventariosActionPerformed
+
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientesActionPerformed
 
     /**
      * @param args the command line arguments
