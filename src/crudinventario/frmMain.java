@@ -16,7 +16,7 @@ public class frmMain extends javax.swing.JFrame {
      * Creates new form frmMain
      */
     public frmMain() {
-        this.fArticulo = new frmArticulo;
+        this.fArticulo = new frmArticulo();
         initComponents();
     }
     frmArticulo fArticulo;

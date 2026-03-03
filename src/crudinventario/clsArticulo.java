@@ -4,6 +4,8 @@
  */
 package crudinventario;
 
+import javax.swing.ListModel;
+
 /**
  *
  * @author shdez
@@ -13,7 +15,7 @@ public class clsArticulo {
     //atributos que necesito que tenga mi objeto articulo
     private final String codigo;
     private final String descripción;
-    private final Double precio;
+    private final  Double precio;
     
     //Constructor
     public clsArticulo(String codigo, String descripcion, Double precio){
@@ -21,15 +23,17 @@ public class clsArticulo {
         this.descripción = descripcion;
         this.precio = precio;
     }
-    
-    //Imprimir en consola los datos del articulo
-    public String aTexto(){
-        String articulo = this.codigo + "!" + this.descripción + "!" + this.precio;
-        return articulo;
-        
+
+    clsArticulo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    //guardar informacion
-    public void guardar(){
-        System.out.println(this.aTexto());
+
+    ListModel<String> llenarLista() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    void guardar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

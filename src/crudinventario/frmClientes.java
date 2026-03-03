@@ -42,19 +42,11 @@ public class frmClientes extends javax.swing.JFrame {
 
         jLabel1.setText("No. Cliente:");
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
         jLabel2.setText("Nombre");
 
         jLabel3.setText("tipo de Cliente:");
 
         jLabel4.setText("Razon social:");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
 
         jLabel5.setText("crear Cliente");
 
@@ -100,14 +92,11 @@ public class frmClientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
