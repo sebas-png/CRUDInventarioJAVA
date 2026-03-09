@@ -8,16 +8,14 @@ package crudinventario;
  *
  * @author shdez
  */
-class txtDescripcion {
+class txtCodigo1 {
 
-    static void setText(String registroSeleccionado) {
+    static void setText(String dato) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    static class get {
-
-        public get() {
-        }
+    static String getText() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
