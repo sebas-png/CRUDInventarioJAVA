@@ -36,7 +36,7 @@ public class clsArticulo {
     public void actualizar(String newCodigo, String newDescripcion, String newPrecio){
         // Generamos la nueva linea de registro
         String nuevaLinea = newCodigo + "!" + newDescripcion + "!" + newPrecio;
-        String lineaOriginal = this.codigo + "!" + this.descripcion + "!" + this.precio;
+        String lineaOriginal = this.codigo.trim() + "!" + this.descripcion.trim() + "!" + this.precio;
         //Imprimir los nuevos valores
         System.out.println("Nuevo valores:" + nuevaLinea);
         System.out.println("Valores Orginales:" + lineaOriginal);
@@ -45,11 +45,27 @@ public class clsArticulo {
         mArticle.update(lineaOriginal, nuevaLinea, "listado_articulos.txt");
     }
 
-    void guardar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+public void eliminar(){
+        // Registro a eliminar
+        String lineaOriginal = this.codigo + "!" + this.descripcion + "!" + this.precio;
+        
+        
+        System.out.println("Valores Orginales:" + lineaOriginal);
+        // Solicita la eliminación del registro
+        mArticulo mArticle = new mArticulo();
+        mArticle.delete(lineaOriginal,  "listado_articulos.txt");
+    }
+    //Imprimir en consola los datos del articulo.
+    String aTexto() {
+       String articulo = this.codigo + "|" + this.descripcion + "|" + this.precio;
+       return articulo;
+    }
+    
+    public String getDescripcion(){
+        return this.descripcion;
     }
 
-    void actualizar(String text) {
+    void guardar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -59,6 +75,10 @@ public class clsArticulo {
         }
 
         private void update(String lineaOriginal, String nuevaLinea, String listado_articulostxt) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private void delete(String lineaOriginal, String listado_articulostxt) {
             throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
     }

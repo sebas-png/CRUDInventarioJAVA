@@ -4,6 +4,8 @@
  */
 package crudinventario;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author shdez
@@ -11,6 +13,7 @@ package crudinventario;
 public class frmArticulo extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmArticulo.class.getName());
+    private Object TxtArticulo;
 
     /**
      * Creates new form frmArticulo
@@ -53,6 +56,18 @@ public class frmArticulo extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
+        lblDescripcion = new javax.swing.JLabel();
+        lblPrecio = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jmArchivo = new javax.swing.JMenu();
+        jmiImportar = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -150,7 +165,7 @@ public class frmArticulo extends javax.swing.JFrame {
                     .addComponent(btnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Actualización de Articulos"));
@@ -204,6 +219,86 @@ public class frmArticulo extends javax.swing.JFrame {
                 .addComponent(btnActualizar))
         );
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Eliminar bordes"));
+
+        jLabel8.setText("Codigo:");
+
+        jLabel9.setText("Descripcion:");
+
+        jLabel10.setText("precio:");
+
+        lblCodigo.setText("jLabel11");
+
+        lblDescripcion.setText("jLabel12");
+
+        lblPrecio.setText("jLabel13");
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(this::btnEliminarActionPerformed);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(19, 19, 19)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(42, 42, 42)
+                            .addComponent(jLabel8))))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(179, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(lblCodigo))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(lblDescripcion))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(lblPrecio))
+                .addGap(49, 49, 49)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+
+        jmArchivo.setText("Archivo");
+        jmArchivo.addActionListener(this::jmArchivoActionPerformed);
+
+        jmiImportar.setText("importar");
+        jmiImportar.addActionListener(this::jmiImportarActionPerformed);
+        jmArchivo.add(jmiImportar);
+
+        jMenuBar1.add(jmArchivo);
+
+        jMenu2.setText("información");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -217,7 +312,9 @@ public class frmArticulo extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -230,8 +327,12 @@ public class frmArticulo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30))
         );
 
@@ -252,8 +353,9 @@ public class frmArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        updateArticulo.actualizar(txtCodigo1.getText(),
-          txtArticulo.getText(),txtPrecio1.getText());
+        /*updateArticulo.actualizar(txtCodigo1.getText(), txtDescripcion1.getText, txtPrecio1.getText());*/
+          
+               
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void lstArticuloValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstArticuloValueChanged
@@ -264,16 +366,48 @@ public class frmArticulo extends javax.swing.JFrame {
             // Separar los datos por el caracter especial
             String[] datos = registroSeleccionado.split("\\!");
             // Preparamos los datos mostrar limpios
-            String codigo = datos[0].replace("Codigo: ", "");
-            String descripcion = datos[1].replace("Codigo: ", "");
+            String codigo = datos[1].replace("Codigo: ", "");
+            String descripcion = datos[2].replace("Codigo: ", "");
             txtCodigo1.setText(codigo);
             txtDescripcion1.setText(descripcion);
             String precio = null;
             txtPrecio1.setText(precio);
             // llenamos el objeto con los valores originales
+            lblCodigo.setText(codigo);
+            lblDescripcion.setText(descripcion);
+            lblPrecio.setText(precio);
             updateArticulo = new clsArticulo(codigo,descripcion,Double.parseDouble(precio));
         }
     }//GEN-LAST:event_lstArticuloValueChanged
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        int respuesta = JOptionPane.showConfirmDialog(this,
+                "Eliminación de respuestas",
+                "¿Estas seguro que deseas eliminar el registro" +
+                        updateArticulo.getDescripcion()+"?",
+                
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        // Si la respuesta es Si comienza a eliminar el registro
+        if(respuesta == JOptionPane.YES_OPTION){
+            updateArticulo.eliminar();
+        }
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void jmArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmArchivoActionPerformed
+        // Vamos a tener la logica de la importación
+        int respuesta = JOptionPane.showConfirmDialog(this, "Es importante que el archivo a importar tenga el nombre inventario.csv y "+" se encuentre en la raiz del proyecto", "importación de Datos desde archivo CSV", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    }//GEN-LAST:event_jmArchivoActionPerformed
+
+    private void jmiImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiImportarActionPerformed
+        // Vamos a tener la logica de la importación
+        int respuesta = JOptionPane.showConfirmDialog(this, "El archivo a importar debe tener como nombre "+" inventario.csv y estar en la raiz del proyecto", "importación de Datos por CSV", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        // Si la respuesta es Si comienza la importación
+        if(respuesta == JOptionPane.YES_OPTION){
+            clsCSV cCsv = new clsCSV();
+            cCsv.importarDatos();
+        }
+    }//GEN-LAST:event_jmiImportarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,17 +437,24 @@ public class frmArticulo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JTextField btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -322,6 +463,11 @@ public class frmArticulo extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JMenu jmArchivo;
+    private javax.swing.JMenuItem jmiImportar;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblPrecio;
     private javax.swing.JList<String> lstArticulo;
     // End of variables declaration//GEN-END:variables
 }
