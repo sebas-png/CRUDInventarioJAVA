@@ -504,14 +504,17 @@ public class frmArticulo extends javax.swing.JFrame {
         tabla.addCell("CÓDIGO");
         tabla.addCell("DESCRIPCIÓN");
         tabla.addCell("PRECIO ($)");
-
-        // =======================================================
-        // 7. AQUÍ VA EL CICLO DONDE LEEN SUS DATOS
-        // (Esto es solo una simulación manual para el ejemplo)
-        // En la práctica real, aquí harían el recorrido de su JList
-        // o leerían su archivo .txt línea por línea.
-        // =======================================================
-       
+        
+        // 7.toma los datos desde el txt y
+       BufferedReader br = new BufferedReader(new FileReader("listado_articulos.txt"));
+       String linea;
+       while((linea = br.readLine()) != null){
+           String[] datos = linea.split("\\|");
+           if(datos.length >= 3){
+               tabla.addCell(datos[0]);
+           }
+       }
+       br.close();
         // Simulación del Artículo 1
         tabla.addCell("FER-001");
         tabla.addCell("Martillo de Acero");
