@@ -498,12 +498,13 @@ public class frmArticulo extends javax.swing.JFrame {
         documento.add(new Paragraph(" ")); // Un salto de línea para dar espacio
 
         // 5. Creamos la estructura tabular (3 columnas)
-        PdfPTable tabla = new PdfPTable(3);
+        PdfPTable tabla = new PdfPTable(4);
        
         // 6. Agregamos los encabezados de la tabla
         tabla.addCell("CÓDIGO");
         tabla.addCell("DESCRIPCIÓN");
         tabla.addCell("PRECIO ($)");
+        tabla.addCell("ESTADO");
         
         // 7.toma los datos desde el txt y
        BufferedReader br = new BufferedReader(new FileReader("listado_articulos.txt"));
@@ -512,6 +513,13 @@ public class frmArticulo extends javax.swing.JFrame {
            String[] datos = linea.split("\\|");
            if(datos.length >= 3){
                tabla.addCell(datos[0]);
+               tabla.addCell(datos[1]);
+               tabla.addCell(datos[2]);
+               if (Math.random() > 0.5 ){
+                   tabla.addCell("Agotado");
+               }else{
+                   tabla.addCell("Disponible");
+               }
            }
        }
        br.close();
