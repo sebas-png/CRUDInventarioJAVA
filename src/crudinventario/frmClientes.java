@@ -4,6 +4,18 @@
  */
 package crudinventario;
 
+import javax.swing.JOptionPane;
+
+    private static class clscsv {
+
+        public clscsv() {
+        }
+
+        private void importarDatos() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
+
 /**
  *
  * @author shdez
@@ -65,6 +77,12 @@ public class frmClientes extends javax.swing.JFrame {
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jmiImportar = new javax.swing.JMenuItem();
+        jMiExportar = new javax.swing.JMenuItem();
+        jMiGenerar = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -257,6 +275,26 @@ public class frmClientes extends javax.swing.JFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
+        jMenu1.setText("Archivo");
+
+        jmiImportar.setText("Importar CSV");
+        jmiImportar.addActionListener(this::jmiImportarActionPerformed);
+        jMenu1.add(jmiImportar);
+
+        jMiExportar.setText("Exportar JSON");
+        jMiExportar.addActionListener(this::jMiExportarActionPerformed);
+        jMenu1.add(jMiExportar);
+
+        jMiGenerar.setText("Generar Reporte PDF");
+        jMenu1.add(jMiGenerar);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Información");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -346,6 +384,24 @@ public class frmClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
 
+    private void jMiExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMiExportarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMiExportarActionPerformed
+
+    private void jmiImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiImportarActionPerformed
+        // TODO add your handling code here:
+        int respuesta = JOptionPane.showConfirmDialog(this,
+                "Es importante que el archivo a importar tenga el nombre " +
+                        "clientes.csv y se encuentre en la raiz del proyecto",
+                "Importacion de datos desde archivo.csv",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (respuesta == JOptionPane.YES_OPTION) {
+            clscsv cCsv = new clscsv();
+            cCsv.importarDatos();
+        }
+        }
+    }//GEN-LAST:event_jmiImportarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -390,6 +446,11 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMiExportar;
+    private javax.swing.JMenuItem jMiGenerar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -408,6 +469,7 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JMenuItem jmiImportar;
     private javax.swing.JTextArea txtAreaConsulta;
     // End of variables declaration//GEN-END:variables
 }

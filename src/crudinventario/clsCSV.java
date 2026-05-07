@@ -15,6 +15,7 @@ import java.io.IOException;
 public class clsCSV {
     // Atributo de el objeto csv2
     String archivo = "inventario.csv";
+    
     double totalGeneral = 0;
     // Metodo de el objeto csv2
     public void importarDatos(){
@@ -36,4 +37,25 @@ public class clsCSV {
             System.out.println("Error al cargar los datos");
         }
 }
+    
+       
 }
+public void importarClientes(){    
+    String archivo2 = null;
+        try(BufferedReader br = new BufferedReader(new FileReader(archivo2))){        
+            br.readLine();   
+            String linea;         
+            while ((linea = br.readLine()) != null){
+                String[] datos = linea.split(",");
+                // Asignacion de valores para insertar.datos
+                clsClientes cCliente = new clsClientes(Integer.parseInt(datos[0]), datos[1],
+                        datos[2], datos[3]);
+                // Almacena en archivo txt
+                cCliente.guardar();
+                }
+            br.close();
+            System.out.println("Se ha terminado la importacion.");    
+        }catch(IOException e){
+            System.out.println("Mensaje de error" + e.getMessage());
+        }
+    }
