@@ -1,0 +1,1 @@
+crudinventario.TxtDescripcion

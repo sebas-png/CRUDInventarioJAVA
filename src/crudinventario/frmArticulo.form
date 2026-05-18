@@ -30,10 +30,18 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="btnGenerarPdf">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Generar(PDF)"/>
+                <Property name="text" type="java.lang.String" value="Generar Reporte(PDF)"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarPdfActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="JMIReporteBonito">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reporte Bonito (PDF)"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIReporteBonitoActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
